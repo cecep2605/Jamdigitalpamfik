@@ -92,62 +92,6 @@
         text-shadow: 3px 3px 15px black;
       }
 
-      .jadwal {
-        display: flex;
-        width: 100%;
-      }
-
-      .card {
-        flex: 1;
-        text-align: center;
-        padding: 15px;
-      }
-
-      .card h3 {
-        font-size: 28px;
-        margin-bottom: 8px;
-      }
-
-      .card p {
-        font-size: 35px;
-        font-weight: bold;
-      }
-
-      .active {
-        border: 5px solid yellow;
-        box-shadow: 0 0 20px y;
-      }
-
-      .imsak {
-        background: #f13506;
-      }
-      .subuh {
-        background: #239b56;
-      }
-      .syuruq {
-        background: #2874a6;
-      }
-      .dzuhur {
-        background: #ca6f1e;
-      }
-      .ashar {
-        background: #138d75;
-      }
-      .maghrib {
-        background: #8e44ad;
-      }
-      .isya {
-        background: #34495e;
-      }
-
-      .next {
-        text-align: center;
-        padding: 15px;
-        background: rgba(0, 0, 0, 0.7);
-        color: yellow;
-        font-size: 32px;
-      }
-
       .running {
         position: absolute;
         bottom: 0;
@@ -191,50 +135,6 @@
        <h2>DIVISI PENGAMANAN</h2>
     </div>
 
-    <div class="jadwal">
-      <div class="card imsak">
-        <h3>Imsak</h3>
-        <p>04:29</p>
-      </div>
-
-      <div class="card subuh">
-        <h3>Subuh</h3>
-        <p>04:39</p>
-      </div>
-
-      <div class="card syuruq">
-        <h3>Syuruq</h3>
-        <p>05:57</p>
-      </div>
-
-      <div class="card dzuhur">
-        <h3>Dzuhur</h3>
-        <p>11:55</p>
-      </div>
-
-      <div class="card ashar">
-        <h3>Ashar</h3>
-        <p>15:16</p>
-      </div>
-
-      <div class="card maghrib">
-        <h3>Maghrib</h3>
-        <p>17:46</p>
-      </div>
-
-      <div class="card isya">
-        <h3>Isya</h3>
-        <p>18:58</p>
-      </div>
-    </div>
-
-    <div class="next">
-      Menuju Adzan :
-      <span id="nextPrayer"></span>
-      |
-      <span id="countdown">00:00:00</span>
-    </div>
-
     <div class="running">
       <marquee scrollamount="8">
         Selamat datang di Divisi Pengamanan PT Pindad | AKHLAK ( Amanah, Kompeten, Loyal, Adaptif, Kolaboratif ) | Pengamanan Bukan Sekedar Tugas, Melainkan Amanah Untuk Memastikan Kehidupan Berjalan Lancar Aman dan Tanpa Gangguan |
@@ -243,14 +143,10 @@
       </marquee>
     </div>
 
-    <audio id="adzan">
-      <source src="adzan.mp3" type="audio/mpeg" />
-    </audio>
-
     <script>
       // BACKGROUND SLIDESHOW
 
-      const backgrounds = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.jpg"];
+      const backgrounds = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.jpg", "bg7.jpg", "bg8.jpg", "bg9.jpg", "bg10.jpg", "bg11.jpg", "bg12.jpg"];
 
       let bgIndex = 0;
 
@@ -299,82 +195,6 @@
 
       updateDate();
 
-      // JADWAL SHOLAT
-
-      const jadwal = [
-        { nama: "imsak", jam: "0" },
-        { nama: "Subuh", jam: "04:39" },
-        { nama: "suruq", jam: "0" },
-        { nama: "Dzuhur", jam: "11:55" },
-        { nama: "Ashar", jam: "15:16" },
-        { nama: "Maghrib", jam: "17:46" },
-        { nama: "Isya", jam: "18:58" },
-      ];
-
-      function updateCountdown() {
-        const now = new Date();
-
-        let nextPrayer = null;
-
-        for (let i = 0; i < jadwal.length; i++) {
-          let [h, m] = jadwal[i].jam.split(":");
-
-          let target = new Date();
-
-          target.setHours(h);
-          target.setMinutes(m);
-          target.setSeconds(0);
-
-          if (target > now) {
-            nextPrayer = {
-              nama: jadwal[i].nama,
-              time: target,
-            };
-
-            break;
-          }
-        }
-
-        if (nextPrayer) {
-          let diff = nextPrayer.time - now;
-
-          let hh = Math.floor(diff / 3600000);
-
-          let mm = Math.floor((diff % 3600000) / 60000);
-
-          let ss = Math.floor((diff % 60000) / 1000);
-
-          document.getElementById("nextPrayer").innerHTML = nextPrayer.nama;
-
-          document.getElementById("countdown").innerHTML = String(hh).padStart(2, "0") + ":" + String(mm).padStart(2, "0") + ":" + String(ss).padStart(2, "0");
-        }
-      }
-
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
-
-      // CEK ADZAN
-
-      function cekAdzan() {
-        const now = new Date();
-
-        const jam = String(now.getHours()).padStart(2, "0");
-
-        const menit = String(now.getMinutes()).padStart(2, "0");
-
-        const waktu = jam + ":" + menit;
-
-        jadwal.forEach((item) => {
-          if (item.jam === waktu) {
-            document
-              .getElementById("adzan")
-              .play()
-              .catch(() => {});
-          }
-        });
-      }
-
-      setInterval(cekAdzan, 1000);
     </script>
   </body>
 </html>
