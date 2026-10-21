@@ -1,200 +1,205 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jam Digital</title>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jam Digital</title>
 
-      body {
-        background: #000;
-        color: white;
-        overflow: hidden;
-      }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      #background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: -2;
-        transition: 1s;
-      }
+    body {
+      background: #000;
+      color: white;
+      overflow: hidden;
+    }
 
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.45);
-        z-index: -1;
-      }
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      transition: 1s;
+    }
 
-      .header {
-        height: 92px;
-        background: rgba(0, 0, 0, 0.55);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-      }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
 
-      .logo-area {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
+    .header {
+      height: 92px;
+      background: rgba(0, 0, 0, 0.55);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
 
-      .masjid h1 {
-        color: goldenrod;
-        font-size: 48px;
-        font-weight: bold;
-      }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-      .masjid p {
-        font-size: 20px;
-      }
+    .masjid h1 {
+      color: goldenrod;
+      font-size: 48px;
+      font-weight: bold;
+    }
 
-      .jam {
-        color: #ff3333;
-        font-size: 72px;
-        font-weight: bold;
-      }
+    .masjid p {
+      font-size: 20px;
+    }
 
-      .info {
-        text-align: center;
-        background: rgba(0, 0, 0, 0.45);
-        padding: 10px;
-        font-size: 24px;
-        color: #ffd700;
-      }
+    .jam {
+      color: #ff3333;
+      font-size: 72px;
+      font-weight: bold;
+    }
 
-      .hero {
-        height: 580px;
-        display: flex;
-        justify-content: center;
-        align-items: top;
-      }
+    .info {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 10px;
+      font-size: 24px;
+      color: #ffd700;
+    }
 
-      .hero h2 {
-        font-size: 60px;
-        text-shadow: 3px 3px 15px black;
-      }
+    .hero {
+      height: 580px;
+      display: flex;
+      justify-content: center;
+      align-items: top;
+    }
 
-      .running {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: black;
-        color: white;
-        font-size: 28px;
-        padding: 10px;
-      }
+    .hero h2 {
+      font-size: 60px;
+      text-shadow: 3px 3px 15px black;
+    }
 
-      marquee {
-        width: 100%;
-      }
-    </style>
-  </head>
+    .running {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: black;
+      color: white;
+      font-size: 28px;
+      padding: 10px;
+    }
 
-  <body>
-    <div id="background"></div>
-    <div class="overlay"></div>
+    marquee {
+      width: 100%;
+    }
+  </style>
+</head>
 
-    <div class="header">
-      <div class="logo-area">
-        <div class="logo"></div>
+<body>
+  <div id="background"></div>
+  <div class="overlay"></div>
 
-        <div class="masjid">
-          <h1>PT PINDAD</h1>
-          <p>Departemen Pengamanan Bandung</p>
-          <p>RENDALPAM</p>
-        </div>
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo"></div>
+
+      <div class="masjid">
+        <h2>Departemen Pengamanan Bandung</h2>
+        <p>PAMFIK & RESCUE</p>
+        <p></p>
       </div>
-
-      <div id="jam" class="jam">00:00:00</div>
     </div>
 
-    <div class="info">
-      <span id="tanggal"></span>
-    </div>
+    <div id="jam" class="jam">00:00:00</div>
+  </div>
 
-    <div class="hero">
-      <h3>RUANG CCTV</h3>
-       <h2>DIVISI PENGAMANAN</h2>
-    </div>
+  <div class="info">
+    <span id="tanggal"></span>
+  </div>
 
-    <div class="running">
-      <marquee scrollamount="8">
-        Selamat datang di Divisi Pengamanan PT Pindad | AKHLAK ( Amanah, Kompeten, Loyal, Adaptif, Kolaboratif ) | Pengamanan Bukan Sekedar Tugas, Melainkan Amanah Untuk Memastikan Kehidupan Berjalan Lancar Aman dan Tanpa Gangguan |
-        Keamanan Yang Andal Dibangun Dari Perencanaan Matang, Pengawasan Ketat dan Kesadaran Bersama, Bukan Hanya Dari Peralatan Semata | Kerjasama Yang Erat dan Komunikasi Yang Cepat Adalah Kunci Mengatasi Segala Ancaman Sebelum Berkembang
-        Menjadi Bahaya Nyata.
-      </marquee>
-    </div>
+  <div class="hero">
+    <h2>RUANG RAPAT PAMFIK</h2>
+  </div>
 
-    <script>
-      // BACKGROUND SLIDESHOW
+  <div class="running">
+    <marquee scrollamount="8">
+      Selamat datang di Divisi Pengamanan PT Pindad | AKHLAK ( Amanah, Kompeten, Loyal, Adaptif, Kolaboratif ) |
+      Pengamanan Bukan Sekedar Tugas, Melainkan Amanah Untuk Memastikan Kehidupan Berjalan Lancar Aman dan Tanpa
+      Gangguan |
+      Keamanan Yang Andal Dibangun Dari Perencanaan Matang, Pengawasan Ketat dan Kesadaran Bersama, Bukan Hanya Dari
+      Peralatan Semata | Kerjasama Yang Erat dan Komunikasi Yang Cepat Adalah Kunci Mengatasi Segala Ancaman Sebelum
+      Berkembang
+      Menjadi Bahaya Nyata.
+    </marquee>
+  </div>
 
-      const backgrounds = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.jpg", "bg7.jpg", "bg8.jpg", "bg9.jpg", "bg10.jpg", "bg11.jpg", "bg12.jpg"];
+  <script>
+    // BACKGROUND SLIDESHOW
 
-      let bgIndex = 0;
+    const backgrounds = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.jpg", "bg7.jpg", "bg8.jpg", "bg9.jpg", "bg10.jpg", "bg11.jpg", "bg12.jpg"];
 
-      function changeBackground() {
-        document.getElementById("background").style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
+    let bgIndex = 0;
 
-        bgIndex++;
+    function changeBackground() {
+      document.getElementById("background").style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
 
-        if (bgIndex >= backgrounds.length) {
-          bgIndex = 0;
-        }
+      bgIndex++;
+
+      if (bgIndex >= backgrounds.length) {
+        bgIndex = 0;
       }
+    }
 
-      changeBackground();
-      setInterval(changeBackground, 10000);
+    changeBackground();
+    setInterval(changeBackground, 10000);
 
-      // JAM DIGITAL
+    // JAM DIGITAL
 
-      function updateClock() {
-        const now = new Date();
+    function updateClock() {
+      const now = new Date();
 
-        const h = String(now.getHours()).padStart(2, "0");
+      const h = String(now.getHours()).padStart(2, "0");
 
-        const m = String(now.getMinutes()).padStart(2, "0");
+      const m = String(now.getMinutes()).padStart(2, "0");
 
-        const s = String(now.getSeconds()).padStart(2, "0");
+      const s = String(now.getSeconds()).padStart(2, "0");
 
-        document.getElementById("jam").innerHTML = `${h}:${m}:${s}`;
-      }
+      document.getElementById("jam").innerHTML = `${h}:${m}:${s}`;
+    }
 
-      setInterval(updateClock, 1000);
-      updateClock();
+    setInterval(updateClock, 1000);
+    updateClock();
 
-      // TANGGAL
+    // TANGGAL
 
-      function updateDate() {
-        const now = new Date();
+    function updateDate() {
+      const now = new Date();
 
-        document.getElementById("tanggal").innerHTML = now.toLocaleDateString("id-ID", {
-          weekday: "long",
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        });
-      }
+      document.getElementById("tanggal").innerHTML = now.toLocaleDateString("id-ID", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+    }
 
-      updateDate();
+    updateDate();
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
